@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="firebaseui-auth-container">
+
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAC9rJvRH3-Ac55oPmVpa8yJDhxkt4bdRo",
+    authDomain: "fire-auth-2020.firebaseapp.com",
+    databaseURL: "https://fire-auth-2020.firebaseio.com",
+    projectId: "fire-auth-2020",
+    storageBucket: "fire-auth-2020.appspot.com",
+    messagingSenderId: "690536928407",
+    appId: "1:690536928407:web:7b4234231e09fa22b5c5d2",
+    measurementId: "G-H7M36QJ60G"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  // Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+ui.start('#firebaseui-auth-container', {
+  signInOptions: [
+    // List of OAuth providers supported.
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+    firebase.auth.GithubAuthProvider.PROVIDER_ID
+  ],
+  // Other config options...
+});
+
+
+</script>
+</body>
+</html>
